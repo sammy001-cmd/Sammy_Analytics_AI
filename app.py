@@ -16,6 +16,24 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+st.markdown("""
+<style>
+    /* Hide Streamlit's top-right toolbar (Share/Fork/GitHub/Star/Edit icons) */
+    [data-testid="stToolbar"] {
+        visibility: hidden;
+        height: 0%;
+        position: fixed;
+    }
+    /* Hide "Made with Streamlit" footer */
+    footer {visibility: hidden;}
+    /* Optional: hide the hamburger menu (top-right ⋮) too */
+    #MainMenu {visibility: hidden;}
+    /* Optional: hide the little "Fork"/GitHub badge specifically if it persists */
+    .viewerBadge_container__1QSob {display: none;}
+    .stDeployButton {display: none;}
+</style>
+""", unsafe_allow_html=True)
+
 # 2. Custom CSS
 st.markdown("""
 <style>

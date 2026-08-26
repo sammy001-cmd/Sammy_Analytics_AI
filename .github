@@ -1,0 +1,15 @@
+name: Keep Streamlit App Awake
+
+# This tells GitHub to run this script every 12 hours automatically
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: # This allows you to run it manually from GitHub if you want
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit App
+        # Replace the URL below with your actual Streamlit Cloud URL!
+        run: curl -sL https://sammy-analytics-ai.streamlit.app/ > /dev/null
