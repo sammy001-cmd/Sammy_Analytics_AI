@@ -21,5 +21,5 @@ Powered by the Groq API (gpt-oss-20b), the application dynamically writes and ex
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/insightforge-ai.git](https://github.com/yourusername/insightforge-ai.git)
+   git clone [https://github.com/sammy001-cmd/sammy_analytics-ai.git](https://github.com/sammy001-cmd/sammy_analytics-ai.git)
    cd sammy_analytics-ai
