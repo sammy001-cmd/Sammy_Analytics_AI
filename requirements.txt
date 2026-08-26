@@ -1,0 +1,10 @@
+# requirements.txt – pinned versions that work together
+numpy==1.26.4          # stable ABI for pandas 2.x
+pandas==2.2.1          # matches the NumPy version above
+streamlit>=1.35.0      # or whatever version you were using
+
+# Data Visualization & AI Engine
+matplotlib
+seaborn
+plotly
+groq

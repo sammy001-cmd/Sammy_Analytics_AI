@@ -1,0 +1,8 @@
+[theme]
+# This forces the app into light mode (white background)
+base = "light"
+
+# You can also explicitly define exact hex colors if you want strict control
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6" # For the sidebar
+textColor = "#31333f"
