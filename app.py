@@ -20,18 +20,17 @@ st.set_page_config(
 st.markdown("""
 <style>
     /* --- 1. CLEAN UP THE HEADER --- */
-    /* Leave the header visible so the mobile sidebar toggle (>) stays, 
-       but specifically kill the Deploy button, Toolbar, and Footer */
+    /* Hide specifically the Deploy button, main menu, and footer. 
+       Do NOT hide the toolbar or header so the sidebar toggle stays safe! */
     .stDeployButton { display: none !important; }
-    [data-testid="stToolbar"] { display: none !important; }
     #MainMenu { display: none !important; }
     footer { display: none !important; }
     .viewerBadge_container__1QSob { display: none !important; }
 
     /* --- 2. DESKTOP TYPOGRAPHY & LAYOUT --- */
     .block-container { 
-        padding-top: 3rem; /* Gave a bit more room so it doesn't overlap the toggle */
-        padding-bottom: 3rem; 
+        padding-top: 4.5rem !important; /* FIXED: Pushed content down so it doesn't cover the toggle button */
+        padding-bottom: 3rem !important; 
         max-width: 1200px;
     }
     .brand-title { font-size: 2rem; font-weight: 700; color: #1e293b; margin-bottom: 0.2rem; }
@@ -50,11 +49,10 @@ st.markdown("""
     /* --- 3. MOBILE-FIRST UI OVERRIDES --- */
     @media (max-width: 768px) {
         .block-container {
-            padding-top: 3.5rem !important; /* Ensure content clears the mobile toggle button */
+            padding-top: 4rem !important; /* FIXED: Ensure content clears the mobile toggle button */
             padding-left: 1rem !important;
             padding-right: 1rem !important;
         }
-        
         .brand-title { font-size: 1.6rem !important; }
         .brand-subtitle { font-size: 0.85rem !important; margin-bottom: 1rem !important; }
         
@@ -64,7 +62,6 @@ st.markdown("""
             margin-right: 0 !important;
             flex-grow: 1; 
         }
-        
         [data-testid="stMetricValue"] { font-size: 1.4rem !important; }
     }
 </style>
