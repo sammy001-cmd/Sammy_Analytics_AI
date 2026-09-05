@@ -20,19 +20,17 @@ st.set_page_config(
 st.markdown("""
 <style>
     /* --- 1. CLEAN UP THE HEADER --- */
-    /* Make header transparent so it doesn't take up visual space */
-    header { background-color: transparent !important; }
-    
-    /* Hide the right-side Streamlit menu (Deploy, 3-dots, GitHub) but KEEP the left mobile toggle */
+    /* Leave the header visible so the mobile sidebar toggle (>) stays, 
+       but specifically kill the Deploy button, Toolbar, and Footer */
+    .stDeployButton { display: none !important; }
     [data-testid="stToolbar"] { display: none !important; }
     #MainMenu { display: none !important; }
     footer { display: none !important; }
-    .viewerBadge_container__1QSob {display: none;}
-    .stDeployButton {display: none;}
+    .viewerBadge_container__1QSob { display: none !important; }
 
     /* --- 2. DESKTOP TYPOGRAPHY & LAYOUT --- */
     .block-container { 
-        padding-top: 2rem; 
+        padding-top: 3rem; /* Gave a bit more room so it doesn't overlap the toggle */
         padding-bottom: 3rem; 
         max-width: 1200px;
     }
@@ -51,26 +49,22 @@ st.markdown("""
 
     /* --- 3. MOBILE-FIRST UI OVERRIDES --- */
     @media (max-width: 768px) {
-        /* Eliminate the massive top margin and tighten side padding */
         .block-container {
-            padding-top: 2.5rem !important; /* Just enough space for the toggle */
+            padding-top: 3.5rem !important; /* Ensure content clears the mobile toggle button */
             padding-left: 1rem !important;
             padding-right: 1rem !important;
         }
         
-        /* Scale down headers for mobile screens */
         .brand-title { font-size: 1.6rem !important; }
         .brand-subtitle { font-size: 0.85rem !important; margin-bottom: 1rem !important; }
         
-        /* Make the Streamlit tabs look more like a native app navigation bar */
         button[data-baseweb="tab"] {
             font-size: 0.8rem !important;
             padding: 0.5rem !important;
             margin-right: 0 !important;
-            flex-grow: 1; /* Stretch tabs evenly across the screen */
+            flex-grow: 1; 
         }
         
-        /* Compact the metric cards */
         [data-testid="stMetricValue"] { font-size: 1.4rem !important; }
     }
 </style>
